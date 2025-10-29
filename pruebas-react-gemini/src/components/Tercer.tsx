@@ -5,8 +5,8 @@ export const Tercer = () => {
 
     const [valorTercer, setValorTercer] = useState(" ")
 
-    const handleKey = (e) => {
-        setValorTercer(e.target.value)
+    const handleKey = (event) => {
+        setValorTercer(event.target.value)
     }
 
 

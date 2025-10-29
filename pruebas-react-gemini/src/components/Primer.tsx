@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 
 
@@ -7,10 +7,14 @@ export const Primer = () => {
 
     const handleSuma = () => {
       setNumeroContador(numeroContador+1)
+
     }
     const handleResta = () => {
       setNumeroContador(numeroContador-1)
     }
+    useEffect(()=> {
+      console.log('Soy el ejercicio 5, el numero de clickeos es :' + numeroContador)
+    },[numeroContador])
     
 
 
