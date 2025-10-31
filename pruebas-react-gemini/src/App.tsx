@@ -3,6 +3,7 @@ import {Primer} from './components/Primer';
 import { Segundo } from './components/Segundo';
 import { Sexto } from './components/Sexto';
 import { Tercer } from './components/Tercer';
+import { Septimo } from './components/Septimo';
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
       <Tercer></Tercer>
       <Cuarto></Cuarto>
       <Sexto></Sexto>
+      <Septimo></Septimo>
     </>
   )
 }

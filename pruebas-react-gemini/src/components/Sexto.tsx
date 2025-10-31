@@ -3,22 +3,26 @@ import { useEffect, useState } from "react"
 
 export const Sexto = () => {
 
-    const [temporizador, setTemporizador] = useState(0)
+    const [temporizador, setTemporizador] = useState(Number)
     const [parar, setParar] = useState(true)
     useEffect(()=>{
-      setInterval(() => {
-        setTemporizador(temporizador + 1)
+      const intervalo = setInterval(() => {
+        setTemporizador(temporizador +1)
+
       }, 1000)
 
+      return () => {
+      clearInterval(intervalo);
+      console.log('Temporizador limpiado');
+    };
 
 
     })
 
     const handlePausa = () =>{
       setTemporizador( 0);
-      clearTimeout(temporizador);
-      clearInterval(temporizador);
-      setParar(false)
+
+      setParar(!parar)
     }
 
 
@@ -28,7 +32,7 @@ export const Sexto = () => {
         parar ? 'Soy un temporizador: '+ temporizador : 'No soy un temporizador'
       }
 
-      <button onClick={handlePausa}>Pausa</button>
+      <button onClick={handlePausa}>{parar ? 'Pausa' : 'Play'}</button>
     </div>
   )
 }
